@@ -10,17 +10,29 @@
  */
 angular
   .module('controlePacientesApp', [
+    
+    'agenda',
+
     'ngAnimate',
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ngMaterial'
   ])
+
   .config(function ($routeProvider) {
+
     $routeProvider
       .when('/', {
         templateUrl: '/components/main/main.html',
         controller: 'MainCtrl'
       })
+      .when('/agenda', {
+        templateUrl: '/components/agenda/agenda.html',
+        controller: 'AgendaController',
+        controllerAs: 'AgendaCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+
   });
