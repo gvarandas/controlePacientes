@@ -1,50 +1,42 @@
-<div>
-	<table>
-		<thead>
-			<th>Nome</th>
-			<th>Pré Natal</th>
-			<th>DUM</th>
-			<th>DPP</th>
-			<th>Status</th>
-		</thead>
-		<tbody>
-			<tr ng-repeat='paciente in AgendaCtrl.pacientes'>
-				<td>{{paciente.nome}}</td>
-				<td>{{paciente.preNatal}}</td>
-				<td>{{paciente.dum}}</td>
-				<td>{{paciente.dpp}}</td>
-				<td>{{paciente.status}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div class='container-fluid'>
+	
+	<div class='row'>
+		<div class='col-xs-1'>
+			<select class='form-control'>
+				<option>Janeiro</option>
+				<option>Fevereiro</option>
+				<option>Março</option>
+				<option>Abril</option>
+			</select>
+		</div>
+	</div>
+
+	<div class='row'>
+		<table class='table table-striped'>
+			<thead>
+				<th>Nome</th>
+				<th>Pré Natal</th>
+				<th>DUM</th>
+				<th>DPP</th>
+				<th>Status</th>
+				<th>Data da Consulta</th>
+				<th></th>
+				<th></th>
+			</thead>
+			<tbody>
+				<tr ng-repeat='paciente in AgendaCtrl.pacientes | orderBy : "nome"'>
+					<td>{{paciente.nome}}</td>
+					<td>{{paciente.preNatal}}</td>
+					<td>{{paciente.dum}}</td>
+					<td>{{paciente.dpp}}</td>
+					<td>{{paciente.status}}</td>
+					<td>{{paciente.dataConsulta}}</td>
+					<td><button class='btn btn-warning btn-xs'><span class='glyphicon glyphicon-edit'></span></button></td>
+					<td><button class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span></button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 </div>
 
-<div ng-if='!AgendaCtrl.showFormPaciente'>
-	<button class='btn btn-default' ng-click='AgendaCtrl.toggleFormPaciente()'>Cadastrar Paciente</button>
-</div>
-
-<div ng-if='AgendaCtrl.showFormPaciente'>
-	<fieldset>
-		<legend>Cadastrar Paciente</legend>
-		<form>
-			<div class='form-group'>
-				<label>Nome:</label>
-				<input class='form-control' id='pacienteNome' type='text' ng-model='AgendaCtrl.pacienteForm.nome'>
-			</div>
-			<div class='form-group'>
-				<label>Pré Natal:</label>
-				<input class='form-control' id='pacientePreNatal' type='date' ng-model='AgendaCtrl.pacienteForm.preNatal'>
-			</div>
-			<div class='form-group'>
-				<label>DUM:</label>
-				<input class='form-control' id='pacienteDum' type='date' ng-model='AgendaCtrl.pacienteForm.dum'>
-			</div>
-			<div class='form-group'>
-				<label>DPP:</label>
-				<input class='form-control' id='pacienteDpp' type='date' ng-model='AgendaCtrl.pacienteForm.dpp'>
-			</div>
-			<button class='btn btn-success' ng-click='AgendaCtrl.cadastrarPaciente()'>Cadastrar</button>
-			<button class='btn btn-danger' ng-click='AgendaCtrl.toggleFormPaciente()'>Cancelar</button>
-		</form>
-	</fieldset>
-</div>
+<cadastro-paciente></cadastro-paciente>

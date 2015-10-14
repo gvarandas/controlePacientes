@@ -12,6 +12,7 @@ angular
   .module('controlePacientesApp', [
     
     'agenda',
+    'cadastro',
 
     'ngAnimate',
     'ngResource',

@@ -61,33 +61,4 @@ angular.module('agenda', [])
 		}
 	];
 
-	vm.pacienteForm = {
-		nome: null,
-		preNatal: null,
-		dum: null,
-		dpp: null,
-		status: null
-	};
-
-	vm.showFormPaciente = false;
-
-	vm.cadastrarPaciente = cadastrarPaciente;
-	vm.toggleFormPaciente = toggleFormPaciente;
-
-	function cadastrarPaciente(){
-		vm.pacienteForm.status = 'Agendado';
-		vm.pacientes.push(vm.pacienteForm);
-		vm.pacienteForm = {
-			nome: null,
-			preNatal: null,
-			dum: null,
-			dpp: null,
-			status: null
-		};
-	}
-
-	function toggleFormPaciente(){
-		vm.showFormPaciente = !vm.showFormPaciente;
-	}
-
   }

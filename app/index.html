@@ -22,22 +22,27 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container-fluid">
+
       <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/agenda">Agenda</a></li>
-        </ul>
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#/">Home</a></li>
-        </ul>
-        <h3 class="text-muted">APP de Controle de Pacientes</h3>
+        <nav class='navbar navbar-default'>
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#/">
+                <p>BRAND</p>
+              </a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a ng-href="#/agenda">Agenda</a></li>
+            </ul>
+            <p class="navbar-text pull-right">Controle de Pacientes - Clínica Dr. Petrus Sanchez</p>
+          </div>
+        </nav>
       </div>
 
       <div ng-view=""></div>
 
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
+      <div class="footer"></div>
     </div>
 
 
@@ -76,6 +81,7 @@
         <script src="app.js"></script>
         <script src="components/main/main.js"></script>
         <script src="components/agenda/agendaController.js"></script>
+        <script src="components/cadastro/cadastroPaciente-directive.js"></script>
         <!-- endbuild -->
 </body>
 </html>
